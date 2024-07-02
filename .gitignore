@@ -20,7 +20,6 @@ bower_components/
 # Docker
 docker-compose.override.yml
 .docker/
-**/Dockerfile*
 
 # Editor directories and files
 .idea/
