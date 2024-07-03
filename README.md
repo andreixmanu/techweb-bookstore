@@ -60,7 +60,7 @@ As we can see from the code above, the components are dinamycally loaded inside 
 
 Other example of SPA could be Gmail, Twitter, Spotify Web Player.
 
-## Project Structure
+## Project Requirements
 
  - **Entities**
 
@@ -104,8 +104,101 @@ The system must comprise:
  
 *Note: When the backend starts, it must preload a small number of students and moderators into the database to simplify application testing during the exam.*
 
-### MEAN STACK
+## MEAN STACK
+### Application Work Flow
 
-Qua dovrà essere descritta la struttura del progetto secondo lo stack utilizzato.
+```mermaid
+flowchart LR  
+  subgraph Database
+  id1[(MongoDB)]
+  end
+
+  id1 --JSON--> id2
+
+
+  subgraph API
+  id2(
+    Node.js
+    ExpressJS
+  )
+  end
+
+  id2 --JSON--> Angular
+
+  subgraph Interface
+  Angular
+  end
+```
 
 ---
+
+### Back-End Structure
+
+```mermaid
+---
+title: Entity Diagram
+---
+erDiagram
+    USERS {
+        string username
+        string password
+        string role
+        string email
+        string name
+        Object_id _id
+        date created_at
+    }
+    
+    BOOKS {
+        string title
+        string author
+        string isbn
+        string description
+        Object_id seller_id
+        string[] images 
+        date created_at
+    }
+
+    AUCTIONS {
+        Object_id _id
+        Object_id book_id
+        Object_id seller_id
+        date start_time
+        date end_time
+        double starting_price
+        double reserve_price
+        number current_highest_bid
+        Object_id winner
+        date created_at 
+    }
+
+    BIDS {
+      Object_id _id
+      Object_id auction_id
+      Object_id bidder_id
+      double amount
+      date timestamp
+    }
+
+    MESSAGES {
+        Object_id _id
+        Object_id auction_id 
+        Object_id sender_id
+        Object_id recipient_id
+        string content
+        boolean visible
+        date timestamp
+    }
+
+```
+
+---
+
+### Front-End Structure
+
+---
+
+> Note: The entire project will be hosted inside **docker's containers**, one for each part of the stack
+
+
+
