@@ -33,3 +33,6 @@ Thumbs.db
 
 # MongoDB data directory
 mongodb/data/
+
+# Frontend angular cache
+frontend/.angular/cache/

@@ -8,11 +8,15 @@ enum UserType {
 interface IUser extends Document {
     username: string;
     password: string;
-    type: UserType;
+    role: UserType;
+    email: string;
+    created_at: Date;
 }
 
 const userSchema: Schema = new Schema({
     username: { type: String, required: true },
     password: { type: String, required: true },
-    type: { type: String, required: true, enum: Object.values(UserType) }
+    role: { type: String, required: true, enum: Object.values(UserType) },
+    email: { type: String, required: true },
+    created_at: { type: Date, required: true, default: Date.now }
 });

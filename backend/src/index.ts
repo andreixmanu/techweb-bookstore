@@ -13,9 +13,7 @@ mongoose.connect('mongodb://mongodb:27017/uni-bookstore')
 
 app.use(bodyParser.json());
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));
 
 async function create_template_book() {
     const newBook = await Book.create(

@@ -15,6 +15,7 @@ services:
       - "27017:27017"
     volumes:
       - ./mongodb/data:/data/db
+    command: mongod --quiet --logpath /dev/null
 
   frontend:
     build: ./frontend
