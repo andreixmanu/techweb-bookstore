@@ -33,3 +33,16 @@ Thumbs.db
 
 # MongoDB data directory
 mongodb/data/
+/frontend/.angular/cache/18.0.6/vite/deps/@angular_core.js
+/frontend/.angular/cache/18.0.6/vite/deps/@angular_core.js.map
+/frontend/.angular/cache/18.0.6/vite/deps/@angular_platform-browser.js
+/frontend/.angular/cache/18.0.6/vite/deps/@angular_platform-browser.js.map
+/frontend/.angular/cache/18.0.6/vite/deps/@angular_router.js
+/frontend/.angular/cache/18.0.6/vite/deps/@angular_router.js.map
+/frontend/.angular/cache/18.0.6/vite/deps/_metadata.json
+/frontend/.angular/cache/18.0.6/vite/deps/chunk-C7WUDN6V.js
+/frontend/.angular/cache/18.0.6/vite/deps/chunk-C7WUDN6V.js.map
+/frontend/.angular/cache/18.0.6/vite/deps/chunk-NQ3SZXLJ.js
+/frontend/.angular/cache/18.0.6/vite/deps/chunk-NQ3SZXLJ.js.map
+/backend/MongoDB CS.pdf
+/frontend/.angular/cache/18.0.6/vite/deps/package.json
