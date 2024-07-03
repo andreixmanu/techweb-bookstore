@@ -16,3 +16,21 @@ app.use(bodyParser.json());
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
+
+async function create_template_book() {
+    const newBook = await Book.create(
+        {
+            title : "Fancy title",
+            author : "Fancy author",
+            isbn : 123456789,
+            price : 100
+        }
+    )
+    return newBook.save();
+}
+
+create_template_book().then(() => {
+    console.log("Template book created");
+}).catch((err) => {
+    console.error(err.message);
+})
