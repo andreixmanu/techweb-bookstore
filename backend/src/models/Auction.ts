@@ -9,6 +9,7 @@ interface IAuction extends Document {
     buyer: typeof User;
     price_sold: number;
     current_price: number;
+    reserved_price: number;
     created_at: Date;
     updated_at: Date;
 }
@@ -19,6 +20,7 @@ const auctionSchema: Schema = new Schema({
     buyer: { type: Schema.Types.ObjectId, ref: 'User', required: false },
     price_sold: { type: Number, required: false },
     current_price: { type: Number, required: true },
+    reserved_price: { type: Number, required: true },
     created_at: { type: Date, required: true, default: Date.now },
     updated_at: { type: Date, required: true, default: Date.now }
 });

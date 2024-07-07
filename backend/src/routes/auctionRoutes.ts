@@ -6,7 +6,8 @@ import { testAuction, getAuction, createAuction } from '../controllers/auctionCo
 const router = Router();
 
 router.get("/", testAuction)
+router.post("/new", createAuction)
 router.get("/:id", getAuction)
-router.get("/new", createAuction)
+
 
 export default router;

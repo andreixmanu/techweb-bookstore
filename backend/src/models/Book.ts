@@ -4,8 +4,8 @@ import User from './User';
 interface IBook extends Document {
     title: string;
     author: string;
-    isbn: number;
     price_sold: number;
+    reserved_price: number;
     current_price: number;
     owner: typeof User;
 }
@@ -13,8 +13,8 @@ interface IBook extends Document {
 const bookSchema: Schema = new Schema({
     title: { type: String, required: true },
     author: { type: String, required: true },
-    isbn: { type: Number, required: true },
     price_sold: { type: Number, required: false },
+    reserved_price: { type: Number, required: true },
     current_price: { type: Number, required: true },
     owner: { type: Schema.Types.ObjectId, ref: 'User' , required: true}
 });

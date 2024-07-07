@@ -13,6 +13,27 @@ export const getUser = async (req: express.Request, res: express.Response) => {
 }
 
 export const createUser = async (req: express.Request, res: express.Response) => {
-    res.send("User controller: createUser")
-    res.status(200);
+    console.log("Creating new user");
+
+    const { username,
+            password,
+            role,
+            email,
+            created_at } = req.body;
+    
+    try {
+        const newUser = new User({
+            username,
+            password,
+            role,
+            email,
+            created_at
+        });
+
+        const savedUser = await newUser.save();
+        res.status(201).json(savedUser);
+    } catch (err) {
+        console.error("Error creating new user", err);
+        res.status(500).send("Error creating new user");
+    }
 }

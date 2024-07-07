@@ -5,7 +5,8 @@ const router = Router();
 
 // GET handler for /book
 router.get('/', testBook);
+router.post('/new', createBook);
 router.get('/:id', getBook);
-router.get('/new', createBook);
+
 
 export default router;
