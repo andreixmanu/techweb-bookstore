@@ -12,8 +12,8 @@ export const createAuction = async (req: express.Request, res: express.Response)
         book,
         seller,
         price_sold,
-        current_price,
-        reserved_price, // used as initial price for the auction
+        current_price,  // used as initial price for the auction
+        reserved_price, 
         created_at,
         updated_at
     } = req.body;
@@ -36,7 +36,6 @@ export const createAuction = async (req: express.Request, res: express.Response)
         console.error("Error creating new auction", err);
         res.status(500).send("Error creating new auction");
     }
-
 }
 
 export const getAuction = async (req: express.Request, res: express.Response) => {
@@ -48,4 +47,38 @@ export const getAuction = async (req: express.Request, res: express.Response) =>
     } catch (err) {
         console.error("Error getting auction", err);
     }
-}   
+}
+
+
+export const deleteAuction = async (req: express.Request, res: express.Response) => {
+    const id = req.params.id;
+    try {
+        const user = await Auction.findByIdAndDelete(id);
+        res.status(200).json(user);
+        console.log("User deleted");
+    } catch (err) {
+        console.error("Error deleting user", err);
+    }
+}
+
+export const modifyAuction = async (req: express.Request, res: express.Response) => {
+    const id = req.params.id;
+    const { username,
+            password,
+            role,
+            email,
+            created_at } = req.body;
+    try{
+        const user = await Auction.findByIdAndUpdate(id, {
+            username,
+            password,
+            role,
+            email,
+            created_at
+        });
+        res.status(200).json(user);
+        console.log("Auction updated");
+    } catch (err) {
+        console.error("Error updating Auction", err);
+    }
+}

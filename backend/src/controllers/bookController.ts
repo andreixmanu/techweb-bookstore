@@ -44,3 +44,37 @@ export const createBook = async (req: express.Request, res: express.Response) =>
         res.status(500).send("Error creating new book");
     }
 }
+
+
+export const deleteBook = async (req: express.Request, res: express.Response) => {
+    const id = req.params.id;
+    try {
+        const user = await Book.findByIdAndDelete(id);
+        res.status(200).json(user);
+        console.log("Book deleted");
+    } catch (err) {
+        console.error("Error deleting book", err);
+    }
+}
+
+export const modifyBook = async (req: express.Request, res: express.Response) => {
+    const id = req.params.id;
+    const { username,
+            password,
+            role,
+            email,
+            created_at } = req.body;
+    try{
+        const user = await Book.findByIdAndUpdate(id, {
+            username,
+            password,
+            role,
+            email,
+            created_at
+        });
+        res.status(200).json(user);
+        console.log("Book updated");
+    } catch (err) {
+        console.error("Error updating book", err);
+    }
+}

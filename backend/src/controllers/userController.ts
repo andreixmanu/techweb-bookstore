@@ -43,3 +43,36 @@ export const createUser = async (req: express.Request, res: express.Response) =>
         res.status(500).send("Error creating new user");
     }
 }
+
+export const deleteUser = async (req: express.Request, res: express.Response) => {
+    const id = req.params.id;
+    try {
+        const user = await User.findByIdAndDelete(id);
+        res.status(200).json(user);
+        console.log("User deleted");
+    } catch (err) {
+        console.error("Error deleting user", err);
+    }
+}
+
+export const modifyUser = async (req: express.Request, res: express.Response) => {
+    const id = req.params.id;
+    const { username,
+            password,
+            role,
+            email,
+            created_at } = req.body;
+    try{
+        const user = await User.findByIdAndUpdate(id, {
+            username,
+            password,
+            role,
+            email,
+            created_at
+        });
+        res.status(200).json(user);
+        console.log("User updated");
+    } catch (err) {
+        console.error("Error updating user", err);
+    }
+}
