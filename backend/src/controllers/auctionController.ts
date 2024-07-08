@@ -7,7 +7,6 @@ export const testAuction = async (req: express.Request, res: express.Response) =
 }
 
 export const createAuction = async (req: express.Request, res: express.Response) => {
-    console.log("Creating new auction");
 
     const {
         book,
@@ -32,6 +31,7 @@ export const createAuction = async (req: express.Request, res: express.Response)
 
         const savedAuction = await newAuction.save();
         res.status(201).json(savedAuction);
+        console.log("New auction created");
     } catch (err) {
         console.error("Error creating new auction", err);
         res.status(500).send("Error creating new auction");
@@ -41,6 +41,11 @@ export const createAuction = async (req: express.Request, res: express.Response)
 
 export const getAuction = async (req: express.Request, res: express.Response) => {
     const id = req.params.id;
-    res.send(`Auction controller: getAuction ${id}`)
-    res.status(200);
+    try {
+        const user = await Auction.findById(id);
+        res.status(200).json(user);
+        console.log("Auction found");
+    } catch (err) {
+        console.error("Error getting auction", err);
+    }
 }   

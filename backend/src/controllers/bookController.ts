@@ -8,12 +8,16 @@ export const testBook = async (req: express.Request, res: express.Response) => {
 
 export const getBook = async (req: express.Request, res: express.Response) => {
     const id = req.params.id;
-    res.send(`Book controller: getBook ${id}`)
-    res.status(200);
+    try {
+        const user = await Book.findById(id);
+        res.status(200).json(user);
+        console.log("Book found");
+    } catch (err) {
+        console.error("Error getting book", err);
+    }
 }
 
 export const createBook = async (req: express.Request, res: express.Response) => {
-    console.log("Creating new book");
 
     const { title,
             author,
@@ -34,6 +38,7 @@ export const createBook = async (req: express.Request, res: express.Response) =>
 
         const savedBook = await newBook.save();
         res.status(201).json(savedBook);
+        console.log("New book created");
     } catch (err) {
         console.error("Error creating new book", err);
         res.status(500).send("Error creating new book");
