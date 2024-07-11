@@ -11,7 +11,9 @@ COPY package*.json ./
 RUN npm install
 
 # Install TypeScript and nodemon globally
-RUN npm install -g  typescript nodemon
+RUN npm install -g typescript nodemon express express-generator http-errors cookie-parser ts-node morgan 
+RUN npm install pug
+RUN npm i --save-dev @types/morgan 
 
 # Copy the rest of the application code
 COPY . .
@@ -23,4 +25,4 @@ RUN npx tsc
 EXPOSE 3000
 
 # Start the application
-CMD ["nodemon", "dist/index.js"]
+CMD ["npm","run",'dev']
