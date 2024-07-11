@@ -82,3 +82,30 @@ export const modifyAuction = async (req: express.Request, res: express.Response)
         console.error("Error updating Auction", err);
     }
 }
+
+export const patchAuction = async (req: express.Request, res: express.Response): Promise<void> => {
+    try {
+        const userId = req.params.id;
+        const updates = req.body;
+
+        // critical information (created_at) should not be updated
+        delete updates.created_at;
+
+        // Find the user and update only the provided fields
+        const updatedAuction = await Auction.findByIdAndUpdate(
+            userId,
+            { $set: updates },
+            { new: true, runValidators: true }
+        );
+
+        if (!updatedAuction) {
+            res.status(404).json({ message: 'Auction not found' });
+            return;
+        }
+
+        res.status(200).json(updatedAuction);
+    } catch (error) {
+        console.error('Error updating user:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};

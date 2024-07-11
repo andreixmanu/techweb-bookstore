@@ -78,3 +78,30 @@ export const modifyBook = async (req: express.Request, res: express.Response) =>
         console.error("Error updating book", err);
     }
 }
+
+export const patchBook = async (req: express.Request, res: express.Response): Promise<void> => {
+    try {
+        const userId = req.params.id;
+        const updates = req.body;
+
+        // critical information (created_at) should not be updated
+        delete updates.created_at;
+
+        // Find the user and update only the provided fields
+        const updatedBook = await Book.findByIdAndUpdate(
+            userId,
+            { $set: updates },
+            { new: true, runValidators: true }
+        );
+
+        if (!updatedBook) {
+            res.status(404).json({ message: 'Book not found' });
+            return;
+        }
+
+        res.status(200).json(updatedBook);
+    } catch (error) {
+        console.error('Error updating user:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};

@@ -76,3 +76,30 @@ export const modifyUser = async (req: express.Request, res: express.Response) =>
         console.error("Error updating user", err);
     }
 }
+
+export const patchUser = async (req: express.Request, res: express.Response): Promise<void> => {
+    try {
+        const userId = req.params.id;
+        const updates = req.body;
+
+        // critical information (created_at) should not be updated
+        delete updates.created_at;
+
+        // Find the user and update only the provided fields
+        const updatedUser = await User.findByIdAndUpdate(
+            userId,
+            { $set: updates },
+            { new: true, runValidators: true }
+        );
+
+        if (!updatedUser) {
+            res.status(404).json({ message: 'User not found' });
+            return;
+        }
+
+        res.status(200).json(updatedUser);
+    } catch (error) {
+        console.error('Error updating user:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
