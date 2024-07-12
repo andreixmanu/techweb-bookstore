@@ -7,9 +7,17 @@ import bookRoutes from './routes/bookRoutes';
 import userRoutes from './routes/userRoutes';
 import auctionRoutes from './routes/auctionRoutes';
 import indexRoutes from './routes/indexRoutes';
+import mongoose from 'mongoose';
 
 const app = express();
 const port = 3000;
+
+// mongodb setup
+mongoose.connect('mongodb://mongodb:27017/uni-bookstore')
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error('MongoDB connection error:', err));
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -40,7 +40,7 @@ export const createUser = async (req: express.Request, res: express.Response) =>
         console.log("New user created");
     } catch (err) {
         console.error("Error creating new user", err);
-        res.status(500).send("Error creating new user");
+        res.status(500).send(`Error creating new user ${err}`);
     }
 }
 
