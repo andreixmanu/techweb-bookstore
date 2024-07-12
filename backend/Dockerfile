@@ -7,13 +7,14 @@ WORKDIR /app
 # Copy the package.json and package-lock.json
 COPY package*.json ./
 
+RUN rm -rf /app/node_modules
 # Install the dependencies
 RUN npm install
 
 # Install TypeScript and nodemon globally
-RUN npm install -g typescript nodemon express express-generator http-errors cookie-parser ts-node morgan 
+RUN npm install -g typescript nodemon express http-errors cookie-parser ts-node morgan 
 RUN npm install pug
-RUN npm i --save-dev @types/morgan 
+RUN npm install --save-dev @types/morgan 
 
 # Copy the rest of the application code
 COPY . .
@@ -25,4 +26,4 @@ RUN npx tsc
 EXPOSE 3000
 
 # Start the application
-CMD ["npm","run",'dev']
+CMD ["nodemon"]
