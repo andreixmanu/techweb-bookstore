@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.py-5.bg-body-tertiary
+    div.container
+      div.d-flex.align-items-center
+        div.me-3(style="flex-shrink: 0; scale: 0.7;")
+          img.card-img-top(src="./image.png" alt="Card image cap")
+        div.flex-grow-1(style="max-width: 50%;")
+          form(role="search").w-100
+            input.form-control(type="search" placeholder="Search" aria-label="Search")
+      div.row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-3
+        each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+          div.col
+            div.card.shadow-sm.p-4
+              svg.bd-placeholder-img.card-img-top(width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false")
+                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                div.d-flex.justify-content-between.align-items-center
+                  div.btn-group
+                    button.btn.btn-sm.btn-outline-secondary(type="button") View
+                    button.btn.btn-sm.btn-outline-secondary(type="button") Edit
+                  small.text-body-secondary 9 mins
