@@ -78,3 +78,14 @@ export const modifyBook = async (req: express.Request, res: express.Response) =>
         console.error("Error updating book", err);
     }
 }
+
+export const getAllBooks = async (req: express.Request, res: express.Response) => {
+    // send all the books in the database
+    try {
+        const books = await Book.find();
+        res.status(200).json(books);
+        console.log("All books found");
+    } catch (err) {
+        console.error("Error getting all books", err);
+    }
+}
