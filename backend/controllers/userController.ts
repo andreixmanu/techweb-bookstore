@@ -76,3 +76,18 @@ export const modifyUser = async (req: express.Request, res: express.Response) =>
         console.error("Error updating user", err);
     }
 }
+
+export const populateUsers = async (req: express.Request, res: express.Response) => {
+
+    // get the json of users from ../test/user-test.json
+    const users = require('../test/user-test.json');
+
+    // send them to the database
+    try {
+        await User.insertMany(users);
+        res.status(200).send("Users populated");
+        console.log("Users populated");
+    } catch (err) {
+        console.error("Error populating users", err);
+    }
+}

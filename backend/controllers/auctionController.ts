@@ -82,3 +82,17 @@ export const modifyAuction = async (req: express.Request, res: express.Response)
         console.error("Error updating Auction", err);
     }
 }
+
+export const populateAuction = async (req: express.Request, res: express.Response) => {
+    // get the json of books from ../test/book-test.json
+    const auctions = require('../test/auction-test.json');
+
+    // send them to the database
+    try {
+        await Auction.insertMany(auctions);
+        res.status(200).send("Auctions populated");
+        console.log("Auctions populated");
+    } catch (err) {
+        console.error("Error populating Auctions", err);
+    }
+}
