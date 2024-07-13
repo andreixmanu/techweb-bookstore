@@ -20,6 +20,7 @@ mongoose.connect('mongodb://mongodb:27017/uni-bookstore')
 
 
 // view engine setup
+// follow teacher book for more info
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
