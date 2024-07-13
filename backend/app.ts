@@ -36,6 +36,11 @@ app.use('/book', bookRoutes);
 app.use('/user', userRoutes);
 app.use('/auction', auctionRoutes);
 
+// render login.pug
+app.get('/login', (req: Request, res: Response) => {
+  res.render('login');
+});
+
 app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));
 
 // catch 404 and forward to error handler
