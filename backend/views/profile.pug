@@ -1,0 +1,58 @@
+extends layout
+
+block content
+    div.container( style="display: flex; justify-content: space-between; margin-top: 1rem; align-items: center;")
+        img(src="./image.png" style="width: 200px; margin: 2rem 0;") 
+        .form(style="display: flex; justify-content: center; align-items: center; margin: 2rem 0;")
+        input(type="search" placeholder="Search" style="margin: 0; width: 50vw;")
+
+    .container(style="background-color: #E1E1E1; \
+        display: flex; \
+        justify-content: center; \
+        align-items: center; \
+        ")
+        img(src="./image3.png" style="width: 16rem; height: 16rem; padding: 2rem;")
+        .container-fluid(style="padding: 2rem;")
+            h3(style="margin-bottom: 7rem;") Username
+            .container(style="display: flex; justify-content: right; align-items: center;")
+                button(type="button" style="margin: 0;") Modify your profile
+
+    .container(style="margin-top: 2rem;")
+        hgroup 
+            h1 Information
+            p Information inserted by the user about themself, no more than 1000 words.
+
+        div(style="height: 6rem; display: flex; align-items: center;") 
+            p(style="color: #646b79;") User since:&nbsp;
+            p 25 gen 2021
+
+        .grid
+            button(type="button") In progress
+            button(type="button").outline.contrast Closed
+            div 
+            div
+    
+        each val in [1, 2, 3, 4] 
+            .container(style="background-color: #E1E1E1; \
+            display: flex; \
+            justify-content: center; \
+            align-items: center; \
+            margin-top: 2rem; \
+            ")
+                img(src="./image3.png" style="width: 16rem; height: 16rem; padding: 2rem;")
+                .container-fluid(style="padding: 2rem;")
+                    .container(style="display: flex; justify-content: space-between; margin-bottom: 4rem; align-items: center;")
+                        hgroup
+                            h3 Username     
+                            div(style="display: flex; flex-direction: column; align-items: left ;")
+                                div(style="display: flex; align-items: center;")
+                                    p(style="color: #646b79; margin: 0;") Sold by:&nbsp;
+                                    p(style="color: #4195D3; margin: 0;") seller_username
+                                div(style="display: flex; align-items: center;")
+                                    p(style="color: #646b79; margin: 0;") Outcome:&nbsp;
+                                    p(style=`color: ${val === 2 ? '#FF0000' : '#4195D3'}; margin: 0;`) Won
+                        button(type="button") Other seller insertions
+                    .container(style="display: flex; justify-content: right; align-items: center;")
+                        h3(style="margin: 0;") 34.5 €     
+        
+        div(style="height: 2rem;")

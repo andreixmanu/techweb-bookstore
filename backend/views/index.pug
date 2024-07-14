@@ -1,26 +1,6 @@
 extends layout
 
 block content
-  //- div.py-5.bg-body-tertiary
-  //-   div.container
-  //-     div.d-flex.align-items-center
-  //-       div.me-3(style="flex-shrink: 0; scale: 0.7;")
-  //-         img.card-img-top(src="./image.png" alt="Card image cap")
-  //-       div.flex-grow-1(style="max-width: 50%;")
-  //-         form(role="search").w-100
-  //-           input.form-control(type="search" placeholder="Search" aria-label="Search")
-  //-     div.row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-3
-  //-       each val in bookList  
-  //-         div.col
-  //-           div.card.shadow-sm.p-4
-  //-             svg.bd-placeholder-img.card-img-top(width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false")
-  //-               p.card-title= val.title
-  //-               p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-  //-               div.d-flex.justify-content-between.align-items-center
-  //-                 div.btn-group
-  //-                   button.btn.btn-sm.btn-outline-secondary(type="button") View
-  //-                   button.btn.btn-sm.btn-outline-secondary(type="button") Edit
-  //-                 small.text-body-secondary= val.current_price + ' €'
   div.container-fluid(style="display: flex; justify-content: space-between; margin: 1rem; align-items: center; margin: 0; padding: 0 10rem;")
     img(src="./image.png" style="width: 200px; margin: 2rem 0;") 
     .form(style="display: flex; justify-content: center; align-items: center; margin: 2rem 0;")
@@ -43,7 +23,7 @@ block content
         | Sell it!
       footer(style="padding-bottom: 0;")
         a(href="/login")
-          button(type="button" style="width: 100%;") Login
+          button(type="button" style="width: 100%; background-color: #4195D3; border:solid 1px #4195D3") Login
   .container(style="margin-top: 2rem; display: flex; justify-content: center; align-items: center;")
     input(type="text" placeholder="World's #1 selling college supplies." style="margin: 0; width: 100%; background-color:" readonly)
   .container(style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 2rem;")
