@@ -1,0 +1,94 @@
+extends layout 
+
+block content 
+    .container(style='margin-top: 2rem')
+        .container-fluid(style="display: flex; justify-content: space-between; align-items: center")
+            img(src="./image.png" style="width: 200px")
+            button Discard
+        
+        .container-fluid(style="margin-top: 4rem")
+            hgroup 
+                h1 Title 
+                p Use the word that someone could use to search this book.
+
+            input(type="text" name="title" placeholder="Title" required style="background-color: #f2f2f2; margin-top: 1rem;")
+
+        hr(style="margin: 1rem 0;")
+
+        .container-fluid(style="margin-top: 4rem")
+            hgroup 
+                h1 Specifics 
+                p Add the required specification (mandatory)
+              
+            .grid
+                input(type="text" name="isbn" placeholder="ISBN" required style="background-color: #f2f2f2; margin-top: 1rem;")
+                input(type="text" name="cond" placeholder="Condition" required style="background-color: #f2f2f2; margin-top: 1rem;")
+            .grid 
+                input(type="text" name="yrs" placeholder="Year of publication" required style="background-color: #f2f2f2; margin-top: 1rem;")
+                input(type="text" name="author" placeholder="Author" required style="background-color: #f2f2f2; margin-top: 1rem;")
+            .grid 
+                input(type="text" name="pub" placeholder="Publisher" required style="background-color: #f2f2f2; margin-top: 1rem;")
+                div
+
+        hr(style="margin: 1rem 0;")
+
+        .container-fluid(style="margin-top: 4rem")
+            hgroup 
+                h1 Description 
+                p Add a brief description of the book.
+              
+            textarea(name="desc" placeholder="Description" required style="background-color: #f2f2f2; margin-top: 1rem;")
+
+        hr(style="margin: 2rem 0;")
+
+
+        .container-fluid(style="margin-top: 4rem")
+            hgroup 
+                h1 Image 
+                p Add an image of the book. (Max 12 images)
+              
+            .grid
+                .container-fluid(
+                    style="background-color: #f2f2f2; \
+                        border: 4px dashed #ccc; \
+                            padding: 2rem; \
+                            display: flex; \
+                            justify-content: center; \
+                            align-items: center; \
+                            height: 200px; \
+                        " 
+                )
+                    input(
+                        type="file" 
+                        name="image" 
+                        multiple 
+                        accept="image/*" 
+                        required 
+                        style="display: flex; \
+                            justify-content: center; \
+                            align-items: center; \
+                            margin: 0; \
+                        "
+                    )
+                div
+                div
+
+        hr(style="margin: 2rem 0;")
+
+        .container-fluid(style="margin-top: 4rem")
+            hgroup 
+                h1 Price 
+                p Choose a low price to increase the competition between buyers. Remember that the item will be sold via an online auction.
+              
+            .grid
+                input.price-input(type="text" name="price" required style="background-color: #f2f2f2; margin-top: 1rem;")
+                div
+                div
+                div
+
+        hr(style="margin: 2rem 0;")
+
+        .container(style="display: flex; justify-content: right; margin-top: 2rem; margin-bottom: 4rem;")
+            button(type="submit", style="width: 6rem;") Upload
+
+        

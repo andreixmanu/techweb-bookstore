@@ -21,11 +21,32 @@ block content
   //-                   button.btn.btn-sm.btn-outline-secondary(type="button") View
   //-                   button.btn.btn-sm.btn-outline-secondary(type="button") Edit
   //-                 small.text-body-secondary= val.current_price + ' €'
-  div.container
-    img(src="./image.png") 
-    .form 
-      input(type="search" placeholder="Search")
-  .container(style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;")
+  div.container-fluid(style="display: flex; justify-content: space-between; margin: 1rem; align-items: center; margin: 0; padding: 0 10rem;")
+    img(src="./image.png" style="width: 200px; margin: 2rem 0;") 
+    .form(style="display: flex; justify-content: center; align-items: center; margin: 2rem 0;")
+      input(type="search" placeholder="Search" style="margin: 0; width: 50vw;")
+  .container-fluid(style="padding: 0; height: 60vh; overflow: hidden;")
+    style.
+      .card-overlay {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+      }
+
+      .card-overlay h3 {
+        padding-bottom: 3rem;
+      }
+    img(src="./image2.jpg")
+    article.card-overlay
+      h3 Something that you're not using? 
+        br 
+        | Sell it!
+      footer(style="padding-bottom: 0;")
+        a(href="/login")
+          button(type="button" style="width: 100%;") Login
+  .container(style="margin-top: 2rem; display: flex; justify-content: center; align-items: center;")
+    input(type="text" placeholder="World's #1 selling college supplies." style="margin: 0; width: 100%; background-color:" readonly)
+  .container(style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 2rem;")
     each val in bookList
       article
         header(style="background-color: #cfd5e2;")= val.title
