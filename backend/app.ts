@@ -49,6 +49,10 @@ app.get('/profile', (req: Request, res: Response) => {
   res.render('profile');
 });
 
+app.get('/auctions', (req: Request, res: Response) => {
+  res.render('auctions');
+});
+
 app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));
 
 // catch 404 and forward to error handler
