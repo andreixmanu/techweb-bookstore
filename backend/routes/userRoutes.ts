@@ -9,5 +9,6 @@ router.post("/populate", populateUsers)
 router.get("/:id", getUser)
 router.put("/:id", modifyUser)
 router.delete("/:id", deleteUser)
+router.post("/moderator", createUser)
 
 export default router;          
