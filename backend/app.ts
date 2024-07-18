@@ -6,7 +6,7 @@ import logger from 'morgan';
 import bookRoutes from './app_api/routes/bookRoutes';
 import userRoutes from './app_api/routes/userRoutes';
 import auctionRoutes from './app_api/routes/auctionRoutes';
-import indexRoutes from './routes/indexRoutes';
+import indexRoutes from './app_server/routes/indexRoutes';
 import mongoose from 'mongoose';
 
 const app = express();
@@ -21,7 +21,7 @@ mongoose.connect('mongodb://mongodb:27017/uni-bookstore')
 
 // view engine setup
 // follow teacher book for more info
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'app_server/views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
