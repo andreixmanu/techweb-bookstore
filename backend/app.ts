@@ -3,10 +3,10 @@ import express, { Request, Response, NextFunction } from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import bookRoutes from './routes/bookRoutes';
-import userRoutes from './routes/userRoutes';
-import auctionRoutes from './routes/auctionRoutes';
-import indexRoutes from './routes/indexRoutes';
+import bookRoutes from './app_api/routes/bookRoutes';
+import userRoutes from './app_api/routes/userRoutes';
+import auctionRoutes from './app_api/routes/auctionRoutes';
+import indexRoutes from './app_server/routes/indexRoutes';
 import mongoose from 'mongoose';
 
 const app = express();
@@ -21,7 +21,7 @@ mongoose.connect('mongodb://mongodb:27017/uni-bookstore')
 
 // view engine setup
 // follow teacher book for more info
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'app_server/views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
@@ -32,34 +32,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRoutes);
 
+// should collapse in /api, putting an index.ts in app_api/routes
 app.use('/book', bookRoutes);
 app.use('/user', userRoutes);
 app.use('/auction', auctionRoutes);
-
-// render login.pug
-app.get('/login', (req: Request, res: Response) => {
-  res.render('login');
-});
-
-app.get('/create', (req: Request, res: Response) => {
-  res.render('create');
-});
-
-app.get('/profile', (req: Request, res: Response) => {
-  res.render('profile');
-});
-
-app.get('/auctions', (req: Request, res: Response) => {
-  res.render('auctions');
-});
-
-app.get('/register', (req: Request, res: Response) => {
-  res.render('register');
-});
-
-app.get('/moderator', (req: Request, res: Response) => {
-  res.render('moderator');
-});
 
 app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));
 
