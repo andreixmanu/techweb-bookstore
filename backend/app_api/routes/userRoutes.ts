@@ -3,7 +3,10 @@ import { testUser, getUser, createUser, modifyUser, deleteUser, populateUsers} f
 
 const router = Router();
 
-router.get("/", testUser)
+router
+    .route("/")
+    .get(testUser)
+
 router.post("/new", createUser)
 router.post("/populate", populateUsers)
 router.get("/:id", getUser)

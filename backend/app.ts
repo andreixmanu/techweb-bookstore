@@ -3,9 +3,9 @@ import express, { Request, Response, NextFunction } from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import bookRoutes from './routes/bookRoutes';
-import userRoutes from './routes/userRoutes';
-import auctionRoutes from './routes/auctionRoutes';
+import bookRoutes from './app_api/routes/bookRoutes';
+import userRoutes from './app_api/routes/userRoutes';
+import auctionRoutes from './app_api/routes/auctionRoutes';
 import indexRoutes from './routes/indexRoutes';
 import mongoose from 'mongoose';
 
@@ -32,34 +32,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRoutes);
 
+// should collapse in /api, putting an index.ts in app_api/routes
 app.use('/book', bookRoutes);
 app.use('/user', userRoutes);
 app.use('/auction', auctionRoutes);
-
-// render login.pug
-app.get('/login', (req: Request, res: Response) => {
-  res.render('login');
-});
-
-app.get('/create', (req: Request, res: Response) => {
-  res.render('create');
-});
-
-app.get('/profile', (req: Request, res: Response) => {
-  res.render('profile');
-});
-
-app.get('/auctions', (req: Request, res: Response) => {
-  res.render('auctions');
-});
-
-app.get('/register', (req: Request, res: Response) => {
-  res.render('register');
-});
-
-app.get('/moderator', (req: Request, res: Response) => {
-  res.render('moderator');
-});
 
 app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));
 
