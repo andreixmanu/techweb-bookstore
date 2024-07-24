@@ -7,4 +7,5 @@ export interface BookObject {
     reserved_price: number;
     current_price: number;
     owner: string; // typeof??
+    _id: string;
 }

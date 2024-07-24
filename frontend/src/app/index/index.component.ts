@@ -26,7 +26,8 @@ export class IndexComponent {
       "price_sold": null,
       "reserved_price": 15.99,
       "current_price": 12.50,
-      "owner": "66912e2577643821bf58ed30"
+      "owner": "66912e2577643821bf58ed30",
+      "_id": "66912e2577643821bf58ed30"
     },
     {
       "title": "1984",
@@ -34,7 +35,8 @@ export class IndexComponent {
       "price_sold": 14.99,
       "reserved_price": 18.99,
       "current_price": 16.50,
-      "owner": "66912e2577643821bf58ed31"
+      "owner": "66912e2577643821bf58ed31",
+      "_id": "66912e2577643821bf58ed31"
     },
     {
       "title": "Pride and Prejudice",
@@ -42,7 +44,8 @@ export class IndexComponent {
       "price_sold": null,
       "reserved_price": 12.99,
       "current_price": 10.75,
-      "owner": "66912e2577643821bf58ed32"
+      "owner": "66912e2577643821bf58ed32",
+      "_id": "66912e2577643821bf58ed32"
     },
     {
       "title": "The Great Gatsby",
@@ -50,7 +53,8 @@ export class IndexComponent {
       "price_sold": 13.50,
       "reserved_price": 14.99,
       "current_price": 13.99,
-      "owner": "66912e2577643821bf58ed33"
+      "owner": "66912e2577643821bf58ed33",
+      "_id": "66912e2577643821bf58ed33"
     },
     {
       "title": "Moby Dick",
@@ -58,7 +62,8 @@ export class IndexComponent {
       "price_sold": null,
       "reserved_price": 16.99,
       "current_price": 14.50,
-      "owner": "66912e2577643821bf58ed34"
+      "owner": "66912e2577643821bf58ed34",
+      "_id" : "66a0ced6f73cc6cfdf66bb78"
     },
     {
       "title": "The Catcher in the Rye",
@@ -66,7 +71,8 @@ export class IndexComponent {
       "price_sold": null,
       "reserved_price": 13.99,
       "current_price": 11.99,
-      "owner": "66912e2577643821bf58ed35"
+      "owner": "66912e2577643821bf58ed35",
+      "_id" : "66a0ced6f73cc6cfdf66bb79"
     },
     {
       "title": "Jane Eyre",
@@ -74,7 +80,8 @@ export class IndexComponent {
       "price_sold": 12.99,
       "reserved_price": 14.99,
       "current_price": 13.50,
-      "owner": "66912e2577643821bf58ed36"
+      "owner": "66912e2577643821bf58ed36",
+      "_id" : "66a0ced6f73cc6cfdf66bb77"
     },
     {
       "title": "The Hobbit",
@@ -82,7 +89,8 @@ export class IndexComponent {
       "price_sold": null,
       "reserved_price": 19.99,
       "current_price": 17.50,
-      "owner": "66912e2577643821bf58ed37"
+      "owner": "66912e2577643821bf58ed37",
+      "_id" : "66a0ced6f73cc6cfdf66bb76"
     },
     {
       "title": "Fahrenheit 451",
@@ -90,7 +98,8 @@ export class IndexComponent {
       "price_sold": 11.99,
       "reserved_price": 13.99,
       "current_price": 12.99,
-      "owner": "66912e2577643821bf58ed38"
+      "owner": "66912e2577643821bf58ed38",
+      "_id" : "66a0ced6f73cc6cfdf66bb75"
     },
     {
       "title": "The Alchemist",
@@ -98,7 +107,8 @@ export class IndexComponent {
       "price_sold": null,
       "reserved_price": 15.99,
       "current_price": 13.99,
-      "owner": "66912e2577643821bf58ed39"
+      "owner": "66912e2577643821bf58ed39",
+      "_id" : "66a0ced6f73cc6cfdf66bb74"
     },
     {
       "title": "Brave New World",
@@ -106,7 +116,8 @@ export class IndexComponent {
       "price_sold": null,
       "reserved_price": 14.99,
       "current_price": 12.99,
-      "owner": "66912e2577643821bf58ed3a"
+      "owner": "66912e2577643821bf58ed3a",
+      "_id" : "66a0ced6f73cc6cfdf66bb73"
     },
     {
       "title": "The Odyssey",
@@ -114,7 +125,8 @@ export class IndexComponent {
       "price_sold": 10.99,
       "reserved_price": 12.99,
       "current_price": 11.99,
-      "owner": "66912e2577643821bf58ed3b"
+      "owner": "66912e2577643821bf58ed3b",
+      "_id" : "66a0ced6f73cc6cfdf66bb72"
     },
     {
       "title": "The Da Vinci Code",
@@ -122,7 +134,8 @@ export class IndexComponent {
       "price_sold": null,
       "reserved_price": 16.99,
       "current_price": 14.99,
-      "owner": "66912e2577643821bf58ed3c"
+      "owner": "66912e2577643821bf58ed3c",
+      "_id" : "66a0ced6f73cc6cfdf66bb71"
     },
     {
       "title": "The Hunger Games",
@@ -130,7 +143,8 @@ export class IndexComponent {
       "price_sold": 13.99,
       "reserved_price": 15.99,
       "current_price": 14.99,
-      "owner": "66912e2577643821bf58ed3d"
+      "owner": "66912e2577643821bf58ed3d",
+      "_id" : "66a0ced6f73cc6cfdf66bb70"
     },
     {
       "title": "One Hundred Years of Solitude",
@@ -138,7 +152,8 @@ export class IndexComponent {
       "price_sold": null,
       "reserved_price": 17.99,
       "current_price": 15.99,
-      "owner": "66912e2577643821bf58ed3e"
+      "owner": "66912e2577643821bf58ed3e",
+      "_id" : "66a0ced6f73cc6cfdf66bb69"
     }
   ];
 }
