@@ -1,5 +1,7 @@
 import express from "express";
 import Book from "../models/Book";
+import { promises as fs } from "fs";
+import { MongoClient, GridFSBucket, ObjectId } from "mongodb";
 
 export const testBook = async (req: express.Request, res: express.Response) => {
     res.send("Book controller: testBook");
@@ -21,7 +23,7 @@ export const createBook = async (
     req: express.Request,
     res: express.Response,
 ) => {
-    const { title, author, price_sold, reserved_price, current_price, owner } =
+    const { title, author, price_sold, reserved_price, current_price, owner, cover_image } =
         req.body;
 
     try {
@@ -32,6 +34,7 @@ export const createBook = async (
             reserved_price,
             current_price,
             owner,
+            cover_image
         });
 
         const savedBook = await newBook.save();

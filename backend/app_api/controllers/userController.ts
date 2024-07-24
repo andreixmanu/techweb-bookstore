@@ -1,6 +1,8 @@
 import express from 'express';
 import User from '../models/User';
 import { mongo } from 'mongoose';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 export const testUser = async (req: express.Request, res: express.Response) => {
     res.send("User controller: testUser")
@@ -90,4 +92,28 @@ export const populateUsers = async (req: express.Request, res: express.Response)
     } catch (err) {
         console.error("Error populating users", err);
     }
+}
+
+export const loginUser = async (req: express.Request, res: express.Response) => {
+
+    try {
+        const {email, password} = req.body;
+        const user = await User.findOne({email: email, password: password});
+
+        if(!user){
+            return res.status(401).json({ message: 'Authentication failed' });
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+
+        const token = jwt.sign(
+            { userId: user._id, email: user.email },
+            process.env.JWT_SECRET || "defaultSecretKey",
+            { expiresIn: '1h' }
+        );
+      
+          res.status(200).render("User logged in");
+        } catch (error) {
+          res.status(500).json({ message: 'Login failed', error });
+        }
 }
