@@ -12,9 +12,9 @@ RUN rm -rf /app/node_modules
 RUN npm install
 
 # Install TypeScript and nodemon globally
-RUN npm install -g typescript nodemon express http-errors cookie-parser ts-node morgan 
-RUN npm install pug
-RUN npm install --save-dev @types/morgan 
+RUN npm install -g typescript nodemon express http-errors cookie-parser ts-node morgan bcryptjs jsonwebtoken
+RUN npm install pug 
+RUN npm install --save-dev @types/morgan @types/bcrypt @types/jsonwebtoken @types/bcryptjs
 
 # Copy the rest of the application code
 COPY . .
