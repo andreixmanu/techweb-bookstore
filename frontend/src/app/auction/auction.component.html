@@ -1,1 +1,258 @@
-<p>auction works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction Page</title>
+    <style>
+        tr {
+            margin: 1rem;
+            border: none;
+        }
+        th {
+            border: none;
+            border-spacing: 0.3rem;
+            width: 50%;
+            border-radius: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="margin-top: 2rem;">
+        <div class="container-fluid" style="display: flex; justify-content: space-between; align-items: center;">
+            <img src="./../image.png" style="width: 200px;">
+            <form class="form" style="display: flex; justify-content: center; align-items: center; margin: 0;">
+                <input type="search" placeholder="Search" style="margin: 0; width: 50vw;">
+            </form>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L1.61 3.607 1.28 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 13a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+            </svg>
+        </div>
+        <div class="grid" style="margin-top: 2rem; margin-bottom: 8rem;">
+            <div class="container-fluid" style="display: flex; justify-content: center; align-items: center;">
+                <img src="./../image3.png">
+            </div>
+            <div class="container-fluid" style="padding: 0;">
+                <div class="container-fluid" style="padding: 0; margin-bottom: 2rem;">
+                    <h1>{{ bookObject?.title }}</h1>
+                    <script>
+                        console.log("{{ bookObject }}")
+                    </script>
+                    <hr style="margin: 2rem 0;">
+                    <div class="container-fluid" style="padding: 0; margin: 0; display: flex; align-items: center; justify-content: left;">
+                        <img src="./../image3.png" style="margin-right: 1rem;">
+                        <h3>seller_username</h3>
+                    </div>
+                    <hr style="margin: 2rem 0;">
+                    <h1>{{ bookObject?.current_price }} €</h1>
+                    <div style="display: flex;">
+                        <p style="color: #646b79;">Condition:&nbsp;</p>
+                        <p>as new</p>
+                    </div>
+                    <div style="display: flex;">
+                        <p style="color: #646b79;">Time remained:&nbsp;</p>
+                        <p>7d 3h</p>
+                    </div>
+                </div>
+                <div class="container-fluid" style="padding: 0; display: flex; flex-direction: column;">
+                    <button style="margin-bottom: 0.5rem;">Make an offer</button>
+                    <button class="outline contrast">Add to your favourite</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="max-height: 30rem; overflow-y: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">Offer</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example rows, replace with dynamic content as needed -->
+                    <tr>
+                        <th scope="row"><h4>seller_username</h4></th>
+                        <td><h4>34.50 €</h4></td>
+                        <td><h4>7d 3h</h4></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h4>seller_username</h4></th>
+                        <td><h4>34.50 €</h4></td>
+                        <td><h4>7d 3h</h4></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h4>seller_username</h4></th>
+                        <td><h4>34.50 €</h4></td>
+                        <td><h4>7d 3h</h4></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h4>seller_username</h4></th>
+                        <td><h4>34.50 €</h4></td>
+                        <td><h4>7d 3h</h4></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h4>seller_username</h4></th>
+                        <td><h4>34.50 €</h4></td>
+                        <td><h4>7d 3h</h4></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h4>seller_username</h4></th>
+                        <td><h4>34.50 €</h4></td>
+                        <td><h4>7d 3h</h4></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h4>seller_username</h4></th>
+                        <td><h4>34.50 €</h4></td>
+                        <td><h4>7d 3h</h4></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h4>seller_username</h4></th>
+                        <td><h4>34.50 €</h4></td>
+                        <td><h4>7d 3h</h4></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h4>seller_username</h4></th>
+                        <td><h4>34.50 €</h4></td>
+                        <td><h4>7d 3h</h4></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h4>seller_username</h4></th>
+                        <td><h4>34.50 €</h4></td>
+                        <td><h4>7d 3h</h4></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h4>seller_username</h4></th>
+                        <td><h4>34.50 €</h4></td>
+                        <td><h4>7d 3h</h4></td>
+                    </tr>
+                    <!-- Repeat rows as needed -->
+                </tbody>
+            </table>
+        </div>
+        <div class="container-fluid" style="margin-top: 4rem; padding: 0;">
+            <h1>Object specifics</h1>
+            <div style="display: flex;">
+                <p style="color: #646b79;">ISBN:&nbsp;</p>
+                <p>10483104487108764076</p>
+            </div>
+            <div style="display: flex;">
+                <p style="color: #646b79;">Condition:&nbsp;</p>
+                <p>as new</p>
+            </div>
+            <div style="display: flex;">
+                <p style="color: #646b79;">Year of publication:&nbsp;</p>
+                <p>17/02/2021</p>
+            </div>
+            <div style="display: flex;">
+                <p style="color: #646b79;">Language:&nbsp;</p>
+                <p>English</p>
+            </div>
+            <div style="display: flex;">
+                <p style="color: #646b79;">Publisher:&nbsp;</p>
+                <p>I don't know</p>
+            </div>
+        </div>
+        <div class="container-fluid" style="margin-top: 4rem;">
+            <h1>Chat with other users</h1>
+            <div class="container-fluid" style="margin: 4rem 0; padding: 1rem; border-radius: 40px; background-color: #f2f2f2; max-height: 100rem;">
+                <div class="container-fluid" style="max-height: 30rem; overflow-y: auto;">
+                    <table>
+                        <tbody>
+                            <!-- Example chat rows, replace with dynamic content as needed -->
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f2f2f2;"></th>
+                                <th style="background-color: #0172ad; color: #fff;">Ciao Tutto bene?</th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f2f2f2;"></th>
+                                <th style="background-color: #0172ad; color: #fff;">Ciao Tutto bene?</th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f2f2f2;"></th>
+                                <th style="background-color: #0172ad; color: #fff;">Ciao Tutto bene?</th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f2f2f2;"></th>
+                                <th style="background-color: #0172ad; color: #fff;">Ciao Tutto bene?</th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f2f2f2;"></th>
+                                <th style="background-color: #0172ad; color: #fff;">Ciao Tutto bene?</th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f2f2f2;"></th>
+                                <th style="background-color: #0172ad; color: #fff;">Ciao Tutto bene?</th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th>Ciao</th>
+                                <th style="background-color: #f2f2f2;"></th>
+                            </tr>
+                            <tr>
+                                <th style="background-color: #f2f2f2;"></th>
+                                <th style="background-color: #0172ad; color: #fff;">Ciao Tutto bene?</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <input type="text" placeholder="Type your message here" style="margin: 0; width: 100%; background-color: #fff; border: none; border-radius: 40px; padding: 1rem;">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

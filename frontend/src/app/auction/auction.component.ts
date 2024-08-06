@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BookObject } from '../book-object';
+import { GetdataService } from '../services/getdata.service';
 
 @Component({
   selector: 'app-auction',
@@ -8,5 +10,12 @@ import { Component } from '@angular/core';
   styleUrl: './auction.component.css'
 })
 export class AuctionComponent {
+  title = 'auction';
+  bookObject: BookObject | undefined;
 
+  constructor(private dataService: GetdataService) {}
+
+  ngOnInit() {
+    this.bookObject = this.dataService.getData();
+  }
 }
