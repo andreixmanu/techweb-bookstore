@@ -1,6 +1,8 @@
-import { Component, inject, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { RegisterService } from '../services/register/register.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -15,6 +17,7 @@ import { RegisterService } from '../services/register/register.service';
 export class RegisterComponent {
   
   registerService = inject(RegisterService);
+  router = inject(Router);
 
   constructor() {}
 
@@ -25,12 +28,19 @@ export class RegisterComponent {
     role: new FormControl('user')
   });
 
-  submitApplication() {
-    this.registerService.submitApplication(
+   async submitApplication() {
+    const resp = this.registerService.submitApplication(
       this.applyForm.value.username ?? '',
       this.applyForm.value.email ?? '',
       this.applyForm.value.password ?? '',
       this.applyForm.value.role ?? ''
     )
+
+    if(await resp === 201) {
+      console.log("Application submitted");
+      this.router.navigate(['']);
+    } else {
+      console.log("Error submitting application");
+    }
   }
 }

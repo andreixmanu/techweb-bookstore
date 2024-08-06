@@ -9,7 +9,7 @@ export class RegisterService {
 
   constructor() { }
 
-  async submitApplication(username: string, email: string, password: string, role: string) {
+  async submitApplication(username: string, email: string, password: string, role: string) : Promise<number> {
     const response = await fetch(this.url, {
       method: 'POST',
       headers: {
@@ -22,6 +22,7 @@ export class RegisterService {
         password
       })
     });
-    return await response.json() ?? '';
+
+    return await response.status;
   }
 }
