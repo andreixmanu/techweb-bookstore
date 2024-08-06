@@ -93,7 +93,7 @@ export const modifyUser = async (req: express.Request, res: express.Response) =>
 export const populateUsers = async (req: express.Request, res: express.Response) => {
 
     // get the json of users from ../test/user-test.json
-    const users = require('../test/user-test.json');
+    const users = require('../../test/user-test.json');
 
     // send them to the database
     try {

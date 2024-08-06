@@ -98,7 +98,7 @@ export const getAllBooks = async (
 export const populateBooks = async (req: express.Request, res: express.Response) => {
 
     // get the json of books from ../test/book-test.json
-    const books = require('../test/book-test.json');
+    const books = require('../../test/book-test.json');
 
     // send them to the database
     try {

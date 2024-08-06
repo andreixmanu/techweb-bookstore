@@ -85,7 +85,7 @@ export const modifyAuction = async (req: express.Request, res: express.Response)
 
 export const populateAuction = async (req: express.Request, res: express.Response) => {
     // get the json of books from ../test/book-test.json
-    const auctions = require('../test/auction-test.json');
+    const auctions = require('../../test/auction-test.json');
 
     // send them to the database
     try {
