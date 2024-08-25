@@ -22,11 +22,14 @@ export const getUser = async (req: express.Request, res: express.Response) => {
 
 export const createUser = async (req: express.Request, res: express.Response) => {
     const { username, password, role, email, created_at } = req.body;
+    console.log(req.body)
     const saltRounds = 10;
 
+    console.log(username, email, password, role, created_at);
     try {
         // Validate required fields
         if (!username || !password || !role || !email) {
+            console.log('All fields required')
             return res.status(400).json({ message: "All fields are required." });
         }
 
@@ -39,6 +42,7 @@ export const createUser = async (req: express.Request, res: express.Response) =>
         // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
         // Create the new user object
+        console.log(username, email, hashedPassword);
         const newUser = new User({
             username,
             password: hashedPassword, // Use the hashed password here
@@ -93,7 +97,7 @@ export const modifyUser = async (req: express.Request, res: express.Response) =>
 export const populateUsers = async (req: express.Request, res: express.Response) => {
 
     // get the json of users from ../test/user-test.json
-    const users = require('../test/user-test.json');
+    const users = require('../../test/user-test.json');
 
     // send them to the database
     try {

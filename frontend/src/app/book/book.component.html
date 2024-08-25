@@ -3,7 +3,7 @@
     <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
         little bit longer.</p>
     <footer style="display: flex; justify-content: space-between; align-items: center;">
-        <a [routerLink]="['/auction', bookObject._id ]"><button class="contrast">View</button></a>
+        <a [routerLink]="['/auction', bookObject._id ]"><button class="contrast" (click)="sendData()">View</button></a>
         <span>{{bookObject.current_price}}</span>
     </footer>
 </article>

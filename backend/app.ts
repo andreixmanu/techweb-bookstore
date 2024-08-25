@@ -9,8 +9,12 @@ import auctionRoutes from './app_api/routes/auctionRoutes';
 import indexRoutes from './app_server/routes/indexRoutes';
 import mongoose from 'mongoose';
 
+const cors = require('cors');
 const app = express();
 const port = 3000;
+
+
+app.use(cors());
 
 // mongodb setup
 mongoose.connect('mongodb://mongodb:27017/uni-bookstore')
