@@ -9,19 +9,16 @@ import auctionRoutes from './app_api/routes/auctionRoutes';
 import indexRoutes from './app_server/routes/indexRoutes';
 import mongoose from 'mongoose';
 
-const cors = require('cors');
+//const cors = require('cors');
 const app = express();
 const port = 3000;
-
-
-app.use(cors());
+ 
+//app.use(cors());
 
 // mongodb setup
 mongoose.connect('mongodb://mongodb:27017/uni-bookstore')
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB connection error:', err));
-
-
 
 // view engine setup
 // follow teacher book for more info
@@ -53,6 +50,7 @@ app.use(function(err: any, req: Request, res: Response, next: NextFunction) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
+
 
   // render the error page
   res.status(err.status || 500);
