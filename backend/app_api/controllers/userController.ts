@@ -132,9 +132,15 @@ export const loginUser = async (req: express.Request, res: express.Response) => 
             { expiresIn: '1h' }
         );
 
+        // Set the token as a cookie
+        res.cookie('token', token, {
+            httpOnly: true, // Ensures the cookie is sent only over HTTP(S), not client JavaScript
+            secure: process.env.NODE_ENV === 'production', // Ensures the cookie is sent only over HTTPS in production
+            maxAge: 3600000 // 1 hour in milliseconds
+        });
+
         res.status(200).json({
             message: 'User logged in',
-            token,
             user: {
                 id: user._id,
                 username: user.username,

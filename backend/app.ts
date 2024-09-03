@@ -8,6 +8,8 @@ import userRoutes from './app_api/routes/userRoutes';
 import auctionRoutes from './app_api/routes/auctionRoutes';
 import indexRoutes from './app_server/routes/indexRoutes';
 import mongoose from 'mongoose';
+import generateToken from './app_api/auth/auth';
+import authenticateJWT from './app_api/auth/middleware';
 
 //const cors = require('cors');
 const app = express();

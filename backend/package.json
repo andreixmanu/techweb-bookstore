@@ -7,6 +7,7 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "express-jwt": "^8.4.1",
     "http-errors": "^2.0.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.0",
@@ -18,11 +19,11 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/cookie-parser": "^1.4.7",
-    "@types/jsonwebtoken": "^9.0.2",
+    "@types/cors": "^2.8.12",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/morgan": "^1.9.9",
     "@types/node": "^20.14.10",
-    "bcryptjs": "^2.4.3",
-    "@types/cors": "^2.8.12"
+    "bcryptjs": "^2.4.3"
   },
   "name": "backend",
   "version": "0.0.0",
